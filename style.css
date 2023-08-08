@@ -1,0 +1,417 @@
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: white;
+}
+body {
+    background-color: black;
+}
+/* variable */
+:root {
+    --primary-color : rgb(16, 224, 16);
+}
+/* navbar */
+nav {
+    background-color: black;
+    padding: 15px 20px 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 7px 0px greenyellow;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    left: 0;
+    line-height: 0;
+}
+.container-features {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+nav ul {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.feature {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+/* navbar fonts */
+nav h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+}
+nav ul li {
+    font-family: 'Carter One', cursive;
+    font-size: 1.1rem;
+}
+.tea {
+    color: var(--primary-color);
+}
+.material-symbols-outlined {
+    font-size: 1.8rem;
+}
+nav ul li a:hover, .feature .material-symbols-outlined a:hover, .feature .material-symbols-outlined:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+nav ul li a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.7rem;
+    border-bottom: 0.2rem solid var(--primary-color);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+nav ul li a:hover::after {
+    transform: scaleX(0.5);
+}
+#sidebar {
+    display: none;
+}
+/* icon style */
+nav h2 .material-symbols-outlined{
+    transform: translateY(5px);
+}
+nav h2 .house {
+  font-variation-settings:
+  'FILL' 1
+}
+/* home header */
+#home {
+    background-image: url(hero-image.jpg);
+    background-position: top center;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    
+}
+#home::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(transparent,black 90%);
+    
+}
+#home main {
+    margin-left: 3%;
+    width: 60%;
+    position: absolute;
+    z-index: 1;
+}
+/* font header */
+#home main h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 3.2rem;
+}
+#home main p {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1.3rem;
+}
+#home main a  {
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    box-shadow: 1px 3px 7px 0px black;
+    padding: 10px;
+    line-height: 90px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#home main a:hover, #contact main form button:hover {
+    color: black;
+}
+/* about us */
+#about-us {
+    margin-top: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about-us main {
+    display: grid;
+    grid-template-areas: 
+    'image paragraph'
+    'image paragraph';
+    width: 60%;
+    margin-top: 20px;
+}
+#about-us main img {
+    height: 450px;
+    grid-area: image;
+}
+#about-us h2, #menu h2, #contact h2 {
+    font-family: 'Righteous', cursive;
+    font-size: 2.3rem;
+    margin: 65px 0 15px 0;
+    text-align: center;
+}
+#about-us .paragraph {
+    grid-area: paragraph;
+    margin-left: 4%;
+}
+#about-us h3 {
+    font-family: 'Carter One', cursive;
+    font-size: 1.8rem;
+}
+#about-us main p {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1.3rem;
+    grid-area: paragraph;
+    text-align: justify;
+}
+/* menu */
+#menu main {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 95%;
+    margin-top: 70px;
+}
+#menu .description-menu, #contact p {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.for-hover {
+    position: relative;
+}
+#menu main img {
+    background-image: url(matcha.jpg);
+    border-radius: 50%;
+    position: relative;
+}
+#menu main .cart > * {
+    cursor: pointer;
+}
+#menu main .overlay {
+    position: absolute;
+    background-color: black; 
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transform: translateY(-305px);
+    font-family: 'Righteous', cursive;
+    font-size: 4rem;
+    transition: 0.5s;
+}
+#menu main .overlay:hover {
+    opacity: 0.5;
+}
+#menu main .cart {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 10px;
+}
+#menu main .cart h3, #menu main .cart p {
+    text-align: center;
+}
+#menu main .cart h3 {
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+#menu main .cart p {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1.2rem;
+}
+/* contact */
+#contact main {
+    margin: 50px auto;
+    background-color: rgb(32, 32, 32);
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#contact main iframe {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+#contact main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    padding: 0 25px;
+}
+#contact main form input {
+    width: 100%;
+    padding: 20px 50px;
+    margin: 5px auto;
+    background-color: black;
+    font-size: 1.1rem;
+    font-family: 'Commissioner', sans-serif;
+    line-height: 0;
+    border: 1px solid white;
+}
+#contact main form input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+#contact main form label:active {
+    color: var(--primary-color);
+}
+#contact main form .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#contact main form label {
+    width: 0;
+    transform: translate(14px,52px);
+}
+#contact main form button {
+    font-family: 'Righteous', cursive;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    box-shadow: 1px 3px 7px 0px black;
+    padding: 10px;
+    margin: 30px 0 20px 0;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+    align-self: center;
+    cursor: pointer;
+}
+/* footer */
+footer {
+    background-color: var(--primary-color);
+    padding: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Commissioner', sans-serif;
+}
+footer .sosmed > *, footer ul > * {
+    margin: 0 10px;
+}
+footer a:hover, footer .sosmed a i:hover {
+    color: black;
+}
+footer ul {
+    display: flex;
+    margin: 20px 0;
+}
+footer .sosmed a i {
+    font-size: 1.1rem;
+}
+footer ul li a {
+    font-size: 1.1rem;
+}
+footer p {
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+
+
+/* resposive */
+
+/* tablet */
+@media (max-width : 768px) {
+    html {
+        font-size: 80%;
+    }
+    #sidebar {
+        display: inline;
+    }
+    /* change nav to sidebar */
+    nav ul {
+        background-color:  rgb(15, 190, 15);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 40%;
+        height: 100vh;
+        box-shadow:-1px 2px 4px 0px greenyellow;
+        transition: 0.7s;
+    }
+    .slide {
+        right: 0;
+    }
+    nav ul li a:hover {
+        color: black;
+    }
+    nav ul li a::after {
+        border-bottom: 0.2rem solid black;
+    }
+    nav .feature {
+        width: 100%;
+        justify-content: end;
+    }
+    #search, #shop {
+        margin-right: 20px;
+    }
+    /*about us  */
+    #about-us main {
+        width: 90%;
+    }
+    /* menu */
+    #menu p {
+        width: 90%;
+    }
+    /* contact */
+    #contact main {
+        grid-template-columns: 1fr;
+        grid-row: 1fr 1fr;
+    }
+    #contact main form label {
+        transform: translate(14px,46px);
+    } 
+}
+/* mobile */
+@media (max-width : 550px) {
+    html {
+        font-size: 80%;
+    }
+    /* about us */
+    #about-us main {
+        grid-template-areas: 'image' 'paragraph';
+    }
+    #about-us main img {
+        justify-self: center;
+    }
+    #about-us .paragraph {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    /* menu */
+    #menu {
+    margin-top: 250px;
+    }
+    #menu .description-menu {
+        width: 90%;
+    }
+}
